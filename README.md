@@ -6,15 +6,15 @@ throughput and latency.
 
 ### Tech Stack
 
-  * Java
-  * Maven
-  * Spring Boot 2
-  * Spring Boot Actuator
-  * Micrometer
-  * Prometheus
-  * Grafana
-  * Gatling
-  * Docker  
+  * [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+  * [Maven](https://maven.apache.org/)
+  * [Spring Boot 2](https://spring.io/projects/spring-boot)
+  * [Spring Boot Actuator](https://spring.io/projects/spring-boot)
+  * [Micrometer](https://micrometer.io/)
+  * [Prometheus](https://prometheus.io/)
+  * [Grafana](https://grafana.com/)
+  * [Gatling](https://gatling.io/)
+  * [Docker](http://docker.io/)  
 
 ### Design Overview
 
@@ -37,7 +37,7 @@ To run the sample app just run the following command:
 $ ./mvnw spring-boot:run
 ```
 
-The app will be available at `localhost:8080` and it contains only a single endpoint `/api/sample` in which
+The app will be available at http://localhost:8080 and it contains only a single endpoint `/api/sample` in which
 returns only a random `uuid`.
 
 Sample request:
@@ -55,7 +55,7 @@ Date: Tue, 31 Jul 2018 09:48:11 GMT
 #### Prometheus
 
 For this example I'm running Prometheus using docker, if you are going to do the same just edit 
-the file `prometheus.yml` adding your own `IP` address, or the `IP` where you are running the
+the file `./monitor/prometheus/prometheus.yml` adding your own `IP` address, or the `IP` where you are running the
 app.
 
 **IMPORTANT**: *It's mandatory to change the IP in the following configuration otherwise Prometheus can not
@@ -78,13 +78,13 @@ If you are running everything locally you can use `localhost` as `IP`.
 
 #### Grafana
 
-As for Prometheus I'm running Grafana using docker and here you can find two file `grafana-datasource.yml` 
-and `grafana-dashboard-yml`.
-
-The `grafana-datasource.yml` configures Prometheus as datasource, you can also do it manually in case you have a 
-standalone Grafana instance running.
-
-The `grafana-dashboard.yml` contains the configuration pointing to the location where the dashboards are stored.
+As for Prometheus I'm running Grafana using docker and here you can find two files:
+ 
+ * `./monitor/grafana/datasource.yml`
+   * Configures Prometheus as datasource, you can also do it manually in case you have a 
+     standalone Grafana instance running. 
+ * `./monitor/grafana/dashboard-yml`
+   * Contains the configuration pointing to the location where the dashboards are stored.
 
 #### Run Prometheus & Grafana (Docker)
 
