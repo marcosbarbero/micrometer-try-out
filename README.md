@@ -111,4 +111,8 @@ $ mvn gatling:test
 
 #### Throughput
 
+![Throughput](./assets/throughput.png)
+
 #### Latency
+
+![Latency](./assets/latency.png)

@@ -1,34 +1,4 @@
 {
-  "__inputs": [
-    {
-      "name": "DS_PROMETHEUS",
-      "label": "prometheus",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "prometheus",
-      "pluginName": "Prometheus"
-    }
-  ],
-  "__requires": [
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "5.2.2"
-    },
-    {
-      "type": "panel",
-      "id": "graph",
-      "name": "Graph",
-      "version": "5.0.0"
-    },
-    {
-      "type": "datasource",
-      "id": "prometheus",
-      "name": "Prometheus",
-      "version": "5.0.0"
-    }
-  ],
   "annotations": {
     "list": [
       {
@@ -46,8 +16,7 @@
   "editable": true,
   "gnetId": 5373,
   "graphTooltip": 0,
-  "id": null,
-  "iteration": 1533028560471,
+  "iteration": 1533036628734,
   "links": [],
   "panels": [
     {
@@ -72,8 +41,8 @@
       "datasource": "prometheus",
       "fill": 1,
       "gridPos": {
-        "h": 9,
-        "w": 24,
+        "h": 8,
+        "w": 12,
         "x": 0,
         "y": 1
       },
@@ -156,10 +125,10 @@
       "datasource": "prometheus",
       "fill": 1,
       "gridPos": {
-        "h": 9,
-        "w": 24,
-        "x": 0,
-        "y": 10
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 1
       },
       "id": 14,
       "legend": {
@@ -210,7 +179,7 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Response time of 50%, 90%, 99% of requests",
+      "title": "Response time",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -256,7 +225,10 @@
     "list": [
       {
         "allValue": null,
-        "current": {},
+        "current": {
+          "text": "sample-app",
+          "value": "sample-app"
+        },
         "datasource": "prometheus",
         "hide": 0,
         "includeAll": false,
@@ -276,7 +248,11 @@
       },
       {
         "allValue": null,
-        "current": {},
+        "current": {
+          "isNone": true,
+          "text": "None",
+          "value": ""
+        },
         "datasource": "prometheus",
         "hide": 0,
         "includeAll": false,
@@ -328,5 +304,5 @@
   "timezone": "",
   "title": "Micrometer Throughput & Latency",
   "uid": "twqdYjziz",
-  "version": 2
+  "version": 1
 }
