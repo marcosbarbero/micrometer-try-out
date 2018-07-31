@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: sample-app
+
+management:
+  metrics:
+    export:
+      prometheus.enabled: true
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+      sla:
+        http.server.requests: 50ms
+  endpoints:
+    web:
+      exposure:
+        include: '*'

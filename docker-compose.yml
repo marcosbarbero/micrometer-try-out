@@ -1,0 +1,18 @@
+version: '3.1'
+services:
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./monitor/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090
+  grafana:
+    image: grafana/grafana
+    volumes:
+      - ./monitor/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
+      - ./monitor/grafana/dashboard.yml:/etc/grafana/provisioning/dashboards/dashboard.yml
+      - ./monitor/grafana/dashboards/latency-throughput-dashboard.json:/var/lib/grafana/dashboards/prometheus/latency-throughput-dashboard.json
+    ports:
+      - 3000:3000
+    depends_on:
+      - prometheus
