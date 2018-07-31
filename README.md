@@ -55,7 +55,7 @@ Date: Tue, 31 Jul 2018 09:48:11 GMT
 
 #### Prometheus
 
-For this example I'm running Prometheus using docker, if you are going to do the same just edit 
+For this example, I'm running Prometheus using docker, if you are going to do the same just edit 
 the file `./monitor/prometheus/prometheus.yml` adding your own `IP` address, or the `IP` where you are running the
 app.
 
@@ -101,7 +101,7 @@ for the first login you might need to configure and username and password, the d
 
 ### Load Test - Gatling 
 
-Now that everything is settle you can just run the Gatling script for a load test using the following command:
+Now that everything is settled you can just run the Gatling script for a load test using the following command:
 
 ```bash
 $ mvn gatling:test
