@@ -84,7 +84,7 @@ As for Prometheus I'm running Grafana using docker and here you can find two fil
  * `./monitor/grafana/datasource.yml`
    * Configures Prometheus as datasource, you can also do it manually in case you have a 
      standalone Grafana instance running. 
- * `./monitor/grafana/dashboard-yml`
+ * `./monitor/grafana/dashboard.yml`
    * Contains the configuration pointing to the location where the dashboards are stored.
 
 #### Run Prometheus & Grafana (Docker)
