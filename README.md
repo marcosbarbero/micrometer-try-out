@@ -18,9 +18,10 @@ throughput and latency.
 
 ### Design Overview
 
-The application is configured to export `histogram` metrics by `micrometer` where Prometheus keep listening to
-`/actuator/prometheus` endpoint and Grafana uses Prometheus as datasource, with that information we can create
-dashboards to check the application's throughput and latency.
+The application is configured to export [histogram](https://github.com/micrometer-metrics/micrometer-docs/blob/master/src/docs/concepts/histogram-quantiles.adoc) 
+metrics by [Micrometer](https://micrometer.io/) where [Prometheus](https://prometheus.io/) keep listening to
+`/actuator/prometheus` endpoint and [Grafana](https://grafana.com/) uses [Prometheus](https://prometheus.io/) as datasource, 
+with that information we can create dashboards to check the application's throughput and latency.
 
 >Sorry there's image for now
 
@@ -58,8 +59,8 @@ For this example I'm running Prometheus using docker, if you are going to do the
 the file `./monitor/prometheus/prometheus.yml` adding your own `IP` address, or the `IP` where you are running the
 app.
 
-**IMPORTANT**: *It's mandatory to change the IP in the following configuration otherwise Prometheus can not
-pull the data from the application.*
+**IMPORTANT**: *It's mandatory to change the IP in the following configuration otherwise [Prometheus](https://prometheus.io/)
+ can not pull the data from the application.*
 
 ```yaml
 global:
@@ -88,14 +89,15 @@ As for Prometheus I'm running Grafana using docker and here you can find two fil
 
 #### Run Prometheus & Grafana (Docker)
 
-Everything related to Prometheus and Grafana is properly configured using Docker Compose, so just run:
+Everything related to Prometheus and [Grafana](https://grafana.com/) is properly configured using 
+[Docker Compose](https://docs.docker.com/compose/), just run:
 
 ```bash
 $ docker-compose up -d
 ```
 
-Once it's finished you'll be able to access the Grafana panel at http://localhost:3000, for the first login you might
-need to configure and username and password, the default value for both is `admin`.
+Once it finishes you'll be able to access the [Grafana](https://grafana.com/) panel at http://localhost:3000, 
+for the first login you might need to configure and username and password, the default value for both is `admin`.
 
 ### Load Test - Gatling 
 
